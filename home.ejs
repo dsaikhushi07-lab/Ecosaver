@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ECO SAVER Home</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #e4ffe6; }
+    .sidebar {
+      float: left;
+      width: 20%;
+      background: #c0f5d9;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar a {
+      display: block;
+      margin-bottom: 14px;
+      color: #222;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .main-content {
+      margin-left: 22%;
+      padding: 30px 40px;
+    }
+    .header {
+      font-size: 38px;
+      font-weight: bold;
+      text-align: center;
+      color: #208068;
+      padding-bottom: 5px;
+      padding-top: 10px;
+    }
+    .filter-search-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #bbecfc;
+      padding: 10px 30px;
+      border-radius: 7px;
+      margin-bottom: 24px;
+      font-size: 19px;
+      color: #227c6d;
+      font-weight: 600;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .product-card {
+      background: #c0f5d9;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      min-height: 120px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 0 8px #208068;
+    }
+    .product-img {
+      background: #bbecfc;
+      border-radius: 7px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .product-title {
+      font-weight: bold;
+      color: #208068;
+      margin-bottom: 6px;
+    }
+    .product-desc {
+      font-size: 14px;
+      color: #23745c;
+    }
+    a.product-link {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="/home">Home</a>
+    <a href="/settings">Settings</a>
+    <a href="/listings">Listing</a>
+    <a href="/cart">Cart</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/auth/logout">Logout</a>
+  </div>
+  <div class="main-content">
+    <div class="header">ECO SAVER</div>
+    <div class="filter-search-bar">
+      <span>Filters</span>
+      <span>Search bar</span>
+    </div>
+    <div class="products">
+      <% products.forEach(function(product) { %>
+        <a href="/product/<%= product.id %>" class="product-link">
+          <div class="product-card">
+            <div class="product-img"></div>
+            <div class="product-title"><%= product.title %></div>
+            <div class="product-desc"><%= product.desc %></div>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

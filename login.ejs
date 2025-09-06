@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eco Saver - Login</title>
+  <style>
+    body {
+      margin: 0;
+      background: #e4ffe6;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background: #bbecfc;
+      text-align: center;
+      padding: 28px 0 10px 0;
+    }
+    .header-title {
+      font-size: 38px;
+      font-weight: bold;
+      color: #208068;
+      letter-spacing: 2px;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #c0f5d9;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px #9dd4bb;
+      padding: 36px 34px 30px 34px;
+      text-align: center;
+    }
+    .login-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+      color: #208068;
+      text-align: left;
+    }
+    .login-input {
+      width: 100%;
+      padding: 10px 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #bbecfc;
+      font-size: 17px;
+      background: #e4ffe6;
+    }
+    .login-btn {
+      background: #208068;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 36px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .login-btn:hover {
+      background: #145042;
+    }
+    .login-title {
+      font-size: 26px;
+      color: #145042;
+      margin-bottom: 25px;
+      font-weight: 600;
+      letter-spacing:1px;
+    }
+    .footer-link {
+      color: #227c6d;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">ECO SAVER</div>
+  </div>
+  <div class="login-container">
+    <div class="login-title">LOGIN</div>
+    <form method="POST" action="/auth/login">
+      <label class="login-label" for="username">Username</label>
+      <input class="login-input" type="text" id="username" name="username" required>
+
+      <label class="login-label" for="password">Password</label>
+      <input class="login-input" type="password" id="password" name="password" required>
+
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+    <div style="margin-top:18px;">
+      <a class="footer-link" href="/auth/signup">Don't have an account? Sign up</a>
+    </div>
+  </div>
+</body>
+</html>
